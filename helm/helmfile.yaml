@@ -1,0 +1,21 @@
+helmDefaults:
+  verify: false
+  wait: false
+  timeout: 600
+  recreatePods: false
+  force: false
+  createNamespace: true
+#repositories:
+#  - name: stable
+#    url: https://charts.helm.sh/stable
+#environments:
+#  internal-tools:
+#    values:
+#    - environments/internal-tools.yaml.gotmpl
+releases:
+- name: radixdlt-core
+  namespace: radixdlt
+  chart: ./radixdlt-core
+- name: radixdlt-faucet
+  namespace: radixdlt
+  chart: ./radixdlt-faucet
